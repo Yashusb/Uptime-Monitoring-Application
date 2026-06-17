@@ -1,0 +1,19 @@
+# Python
+backend/venv/
+__pycache__/
+*.pyc
+
+# Database
+backend/db.sqlite3
+
+# Node Modules
+frontend/node_modules/
+
+# Mac Files
+.DS_Store
+
+# VSCode
+.vscode/
+
+# Docker
+*.log
