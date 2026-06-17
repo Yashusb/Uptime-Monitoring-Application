@@ -21,26 +21,16 @@ The application follows a separated frontend/backend architecture to improve mai
 
 ## Architecture
 
+The application follows a simple three-tier architecture:
 
-┌─────────────────┐
-│  React Frontend │
-└────────┬────────┘
-         │ REST API Calls
-         ▼
-┌─────────────────┐
-│ Django REST API │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ APScheduler     │
-│ Health Checker  │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ SQLite Database │
-└─────────────────┘
+1. React frontend allows users to register URLs and view monitoring results.
+2. Django REST API exposes endpoints for URL registration and status retrieval.
+3. APScheduler performs periodic health checks and stores results in SQLite.
+4. The frontend periodically retrieves the latest monitoring data from the backend API.
+
+Flow:
+
+Frontend → Django REST API → APScheduler → SQLite Database
 
 ---
 
@@ -72,6 +62,9 @@ The application follows a separated frontend/backend architecture to improve mai
 
 ## Project Structure
 
+## Project Structure
+
+```text
 uptime-monitor/
 │
 ├── backend/
@@ -88,10 +81,10 @@ uptime-monitor/
 │   └── package.json
 │
 ├── docker-compose.yml
-│
 ├── README.md
 ├── AI_LOG.md
 └── RUNNING_APPLICATION.md
+```
 
 ---
 
