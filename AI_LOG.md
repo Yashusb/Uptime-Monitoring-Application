@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # AI Usage Log
 
 ## Overview
