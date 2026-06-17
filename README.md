@@ -21,26 +21,26 @@ The application follows a separated frontend/backend architecture to improve mai
 
 ## Architecture
 
-+------------------+
-| React Frontend   |           |
-+--------+---------+
-         |
-         | REST API
-         |
-+--------v---------+
-| Django REST API  |
-+--------+---------+
-         |
-         |
-+--------v---------+
-| APScheduler      |
-| Health Checker   |
-+--------+---------+
-         |
-         |
-+--------v---------+
-| SQLite Database  |
-+------------------+
+
+┌─────────────────┐
+│  React Frontend │
+└────────┬────────┘
+         │ REST API Calls
+         ▼
+┌─────────────────┐
+│ Django REST API │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ APScheduler     │
+│ Health Checker  │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ SQLite Database │
+└─────────────────┘
 
 ---
 
